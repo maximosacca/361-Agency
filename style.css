@@ -594,9 +594,7 @@ footer h2 {
 }
 
 /* Ocultamos el cursor del sistema para que solo se vea el verde */
-body {
-    cursor: none; 
-}
+
 
 /* Las imágenes que deja la estela */
 .trail-image {

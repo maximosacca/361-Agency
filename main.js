@@ -39,10 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const cursor = document.getElementById('cursor');
     
     if (cursor) {
+        // El cursor verde sigue al puntero real con un pequeño retraso suave
         window.addEventListener('mousemove', (e) => {
-          gsap.set(cursor, {
+          gsap.to(cursor, {
             x: e.clientX,
-            y: e.clientY
+            y: e.clientY,
+            duration: 0.15, // Cuanto más alto el número, más tarda en alcanzar a la flecha
+            ease: "power2.out" // Efecto de frenado suave al llegar
           });
         });
 
