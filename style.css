@@ -137,16 +137,21 @@ ul { list-style: none; }
 
 /* HERO SECTION */
 .hero {
-    height: 100vh; 
+    /* Cambiamos height por min-height para mayor adaptabilidad */
+    min-height: 100vh; 
+    
     background-color: var(--color-black);
     color: var(--color-white);
     
     display: flex;
     align-items: center;
     justify-content: center;
-    
     position: relative;
-    /* Eliminamos el overflow: hidden; de acá */
+    
+    /* Le damos un respiro superior para que no choque con la navbar fija */
+    padding-top: 120px; 
+    /* Le damos padding inferior por si la pantalla es muy chica */
+    padding-bottom: 40px; 
 }
 
 /* Animaciones fluidas de fondo (se mantienen igual) */
