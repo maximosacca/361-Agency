@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos | 361 Agencia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+
+<body>
+    <!-- Cursor personalizado global -->
+    <div id="cursor"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="img/PRINC - COLOR.png" alt="361 Agencia"></a>
+        </div>
+        <ul class="nav-links">
+            <!-- Actualizamos el link al nuevo ID -->
+            <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+        </ul>
+        <a href="https://whatsapp.com" class="btn-primary">Hablemos</a>
+    </nav>
+
+    <!-- NUEVO HERO DE PROYECTOS (100vh) -->
+    <header class="projects-hero">
+        <div class="container" id="hero-text-content">
+            <h1 class="section-title-proyectos" style="margin-bottom: 1rem;">Proyectos que nos <span
+                    class="highlight-green">enorgullecen</span></h1>
+            <p class="large-text" style="max-width: 700px; margin: 0 auto; color: #e0e0e0;">
+                Una selección de nuestros mejores trabajos. Descubrí cómo transformamos ideas en marcas memorables y
+                estrategias con propósito.
+            </p>
+        </div>
+    </header>
+
+    <!-- Grilla de Proyectos (2x2) -->
+    <section class="projects section-reveal">
+        <div class="container">
+            <div class="projects-grid">
+
+                <!-- Proyecto 1 -->
+                <div class="project-card">
+                    <img src="img/PROYECTOS/1.jpeg" alt="Proyecto 1" class="img-base">
+                    <img src="img/PROYECTOS/1.2.jpeg" alt="Proyecto 1 hover" class="img-hover">
+                    <div class="project-info">
+                        <h3>Abuela Churros</h3>
+                        <p>Branding & Identidad</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="project-card">
+                    <img src="img/PROYECTOS/2.jpeg" alt="Proyecto 2" class="img-base">
+                    <img src="img/PROYECTOS/2.2.jpeg" alt="Proyecto 2 hover" class="img-hover">
+                    <div class="project-info">
+                        <h3>Bleu Cafeteria</h3>
+                        <p>Branding & Identidad</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="project-card">
+                    <img src="img/PROYECTOS/3.jpeg" alt="Proyecto 3" class="img-base">
+                    <img src="img/PROYECTOS/3.2.jpeg" alt="Proyecto 3 hover" class="img-hover">
+                    <div class="project-info">
+                        <h3>Sepibu Cosmeticos</h3>
+                        <p>Campaña Publicitaria</p>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4 -->
+                <div class="project-card">
+                    <img src="img/PROYECTOS/4.jpeg" alt="Proyecto 4" class="img-base">
+                    <img src="img/PROYECTOS/4.2.jpeg" alt="Proyecto 4 hover" class="img-hover">
+                    <div class="project-info">
+                        <h3>CeraVe</h3>
+                        <p>Evento</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <h2>¿Tenés un proyecto en mente? </h2>
+            <a href="https://whatsapp.com" class="btn-primary">Hablemos</a>
+            <p class="footer-copy">© 2026 Agencia 361. Desde Córdoba, Argentina.</p>
+        </div>
+    </footer>
+
+    <!-- Vinculamos el script principal -->
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | 361 Agencia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <div id="cursor"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="img/PRINC - COLOR.png" alt="361 Agencia"></a>
+        </div>
+        <ul class="nav-links">
+            <!-- Actualizamos el link al nuevo ID -->
+            <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+        </ul>
+        <a href="https://whatsapp.com" class="btn-primary">Hablemos</a>
+    </nav>
+
+    <!-- Header simple para la página de servicios -->
+    <header class="page-header" style="padding: 12rem 0 4rem; text-align: center;">
+        <div class="container">
+            <h1 class="section-title">Nuestros <span class="highlight-green">Servicios</span></h1>
+            <p class="large-text">Ofrecemos soluciones integrales de comunicación y publicidad, acompañando en cada
+                etapa del desarrollo de marca.</p>
+        </div>
+    </header>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="services section-reveal">
+        <div class="container">
+
+            <div class="services-list">
+
+                <!-- Servicio 1 -->
+                <div class="service-item">
+                    <h3 class="service-title">Branding e Identidad</h3>
+                    <div class="service-content">
+                        <div class="service-inner">
+                            <!-- ACÁ ESTÁ LA NUEVA CARD RECTANGULAR -->
+                            <div class="service-card-expanded">
+                                <p>Construimos marcas con identidad, capaces de generar emociones y diferenciarse</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="./img/ELEMENTOS/Recurso 22.png" class="side-graphic left" alt="">
+
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-item">
+                    <h3 class="service-title">Estrategia de Marca</h3>
+                    <div class="service-content">
+                        <div class="service-inner">
+                            <div class="service-card-expanded">
+                                <p>Cada idea que desarrollamos tiene un propósito y responde a una estrategia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="./img/ELEMENTOS/Recurso 29.png" class="side-graphic right" alt="">
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-item">
+                    <h3 class="service-title">Campañas Publicitarias</h3>
+                    <div class="service-content">
+                        <div class="service-inner">
+                            <div class="service-card-expanded">
+                                <p>No creamos acciones aisladas, buscamos coherencia y sentido</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="./img/ELEMENTOS/Recurso 24.png" class="side-graphic left" alt="">
+
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="service-item">
+                    <h3 class="service-title">Marketing Digital</h3>
+                    <div class="service-content">
+                        <div class="service-inner">
+                            <div class="service-card-expanded">
+                                <p>Gestión de redes, producción de contenido y planificación de medios</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <img src="./img/ELEMENTOS/Recurso 38.png" class="side-graphic right" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- NUEVA SECCIÓN: NUESTRO MÉTODO -->
+    <section class="methodology">
+        <!-- El título sigue en su container para estar centrado con la página -->
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 2rem; text-align: center;">Nuestro <span
+                    class="highlight-purple">método</span></h2>
+        </div>
+
+        <!-- Sacamos la lista del container para que pueda expandirse al 90% de la pantalla -->
+        <ol class="method-list">
+            <li class="method-step">
+                <div class="step-number"></div>
+                <div class="step-name">Esencia</div>
+                <div class="step-desc">Escuchamos y comprendemos la escencia, historia y objetivos de cada marca para construir desde adentro hacia afuera</div>
+            </li>
+            <li class="method-step">
+                <div class="step-number"></div>
+                <div class="step-name">Estrategia</div>
+                <div class="step-desc">Definimos el posicionamiento, el publico objetivo y el camino estrategico que guiara todas las decisiones de comunicación</div>
+            </li>
+            <li class="method-step">
+                <div class="step-number"></div>
+                <div class="step-name">Concepto</div>
+                <div class="step-desc">Traducimos la escencia en un concepto creativo central que da sentido y direccion a toda la comunicacion de la marca</div>
+            </li>
+            <li class="method-step">
+                <div class="step-number"></div>
+                <div class="step-name">Creatividad</div>
+                <div class="step-desc">Desarrollamos piezas, campañas y contenidos con identidad propia, coherencia visual y un mensaje claro y memorable</div>
+            </li>
+        </ol>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <h2>¿Tenés un proyecto en mente? </h2>
+            <a href="https://whatsapp.com" class="btn-primary">Hablemos</a>
+            <p class="footer-copy">© 2026 Agencia 361. Desde Córdoba, Argentina.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

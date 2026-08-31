@@ -1,0 +1,757 @@
+/* --- VARIABLES DE MARCA --- */
+:root {
+    /* Paleta Oficial */
+    --color-purple: #a346f7; /* Passion Purple[cite: 2] */
+    --color-green: #90fa11;  /* Electric Green[cite: 2] */
+    --color-white: #f7f4ed;  /* Reputation White[cite: 2] */
+    --color-black: #2a2627;  /* Mistery Black[cite: 2] */
+
+    /* Fuentes */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Espaciados y estructura */
+    --transition: all 0.3s ease;
+    --radius: 12px;
+}
+
+/* --- RESET & GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* --- UTILIDADES --- */
+.highlight-green { color: var(--color-green); }
+.highlight-purple { color: var(--color-purple); }
+
+.btn-primary-hero {
+    color: var(--color-green);
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    transition: var(--transition);
+    cursor: pointer;
+    border: solid var(--color-green) 2px;
+}
+
+.btn-primary-hero:hover {
+    border: solid var(--color-white) 2px;
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--color-green);
+    color: var(--color-black);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-purple);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-purple);
+    transform: translateY(-3px);
+}
+
+/* --- NAVEGACIÓN --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 2rem;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    color: var(--color-white);
+}
+
+.logo img {
+    max-height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--color-green);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-links a:hover { color: var(--color-green); }
+
+/* --- REEMPLAZAR ESTA PARTE EN TU STYLE.CSS --- */
+
+/* HERO SECTION */
+.hero {
+    height: 100vh; 
+    background-color: var(--color-black);
+    color: var(--color-white);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    /* Eliminamos el overflow: hidden; de acá */
+}
+
+/* Animaciones fluidas de fondo (se mantienen igual) */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 50vw;
+    height: 50vw;
+    background: var(--passion-purple);
+    filter: blur(120px);
+    border-radius: 50%;
+    top: -20%;
+    left: -10%;
+    opacity: 0.3;
+    animation: float 8s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    background: var(--electric-green);
+    filter: blur(100px);
+    border-radius: 50%;
+    bottom: -10%;
+    right: -10%;
+    opacity: 0.2;
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(40px) scale(1.05); }
+    100% { transform: translateY(0px) scale(1); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    
+    /* Flexbox en columna para apilar H1, P y Botón en el centro absoluto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* Centra los elementos horizontalmente */
+    justify-content: center;  /* Centra los elementos verticalmente */
+    text-align: center;       /* Asegura que el texto interno esté alineado al medio */
+}
+
+.hero h1 {
+    font-family: var(--font-headers);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    color: #e0e0e0;
+    max-width: 600px;
+    /* Al usar flex-direction: column, el margin auto ya no es obligatorio, 
+       pero mantenemos text-align center por prolijidad */
+    text-align: center; 
+}
+
+/* Animaciones decorativas (Blobs estilo branding 361) */
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    border-radius: 50%;
+    z-index: -1; /* <-- Cambiá esto para que vayan por detrás */
+    opacity: 0.5;
+    animation: float 10s infinite alternate ease-in-out;
+    pointer-events: none; 
+}
+
+.blob-purple {
+    width: 400px;
+    height: 400px;
+    background: var(--color-purple);
+    top: -10%;
+    right: 5%;
+}
+
+.blob-green {
+    width: 300px;
+    height: 300px;
+    background: var(--color-green);
+    bottom: 10%;
+    right: 25%;
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, 50px) scale(1.1); }
+}
+
+/* --- SECCIONES GENÉRICAS --- */
+section { padding: 8rem 0; }
+.section-title { font-size: 3rem; margin-bottom: 3rem; text-align: center;}
+.large-text { font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 500; }
+
+/* --- SERVICIOS (ACORDEÓN Y GRÁFICOS LATERALES) --- */
+.services {
+    background-color: var(--color-black);
+    color: var(--color-black);
+    position: relative; /* Importante para que los z-index funcionen bien */
+}
+
+.services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.service-item {
+    border-bottom: 2px solid var(--color-purple);
+    padding: 2rem 0;
+    cursor: pointer;
+    transition: border-color 0.4s ease;
+}
+
+.service-item:hover {
+    border-bottom-color: var(--color-green);
+}
+
+.service-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-purple);
+    margin: 0;
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+/* Efecto visual en el título al pasar el mouse */
+.service-item:hover .service-title {
+    color: var(--color-green);
+    transform: translateX(20px);
+}
+
+/* MAGIA DEL ACORDEÓN */
+.service-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-item:hover .service-content {
+    grid-template-rows: 1fr;
+}
+
+.service-inner {
+    overflow: hidden; 
+}
+
+/* LA NUEVA CARD DESPLEGABLE RECTANGULAR */
+.service-card-expanded {
+    background-color: var(--color-purple); /* Fondo oscuro para destacar la forma */
+    border-radius: var(--radius);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    
+    /* Mucho padding arriba y abajo para hacerla más alta */
+    padding: 4rem 3rem; 
+    min-height: 200px; /* Forzamos un alto mínimo para que sea un rectángulo notorio */
+    
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid var(--color-green); /* Detalle de color de la marca */
+    
+    /* Animación extra para que el texto aparezca suave */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease 0.1s;
+}
+
+.service-item:hover .service-card-expanded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card-expanded p {
+    font-size: 1.25rem;
+    color: var(--color-white);
+    margin: 0;
+    line-height: 1.6;
+    text-align: center;
+}
+/* --- ANIMACIÓN DE IMÁGENES LATERALES --- */
+.side-graphic {
+    position: fixed; /* Anclado a la pantalla (viewport) */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px; /* Ajustá este tamaño según tus imágenes */
+    height: auto;
+    z-index: 50; /* Por encima del fondo pero por debajo del navbar */
+    opacity: 0;
+    pointer-events: none; /* Evita que la imagen interfiera con el mouse/hover */
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.side-graphic.left {
+    left: -300px; /* Escondido fuera de la pantalla a la izquierda */
+}
+
+.side-graphic.right {
+    right: -300px; /* Escondido fuera de la pantalla a la derecha */
+}
+
+/* Al hacer hover en el ítem, las imágenes correspondientes entran a la pantalla */
+.service-item:hover .side-graphic.left {
+    left: 5vw;
+    opacity: 1;
+}
+
+.service-item:hover .side-graphic.right {
+    right: 5vw;
+    opacity: 1;
+}
+
+/* En celulares anulamos las imágenes laterales para que no tapen la pantalla */
+@media (max-width: 900px) {
+    .side-graphic {
+        display: none;
+    }
+    .service-item:hover .service-title {
+        transform: translateX(10px);
+    }
+}
+
+.service-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+/* --- DIFERENCIAL (SPLIT LAYOUT) --- */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.split-text { flex: 1; }
+.split-text p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+.bold-statement {
+    font-size: 1.3rem;
+    color: var(--color-green);
+    border-left: 4px solid var(--color-purple);
+    padding-left: 1.5rem;
+    margin-top: 2rem;
+}
+
+.split-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- CAJA 361 ROTATORIA (CSS PURO) --- */
+.box-361 {
+    width: 300px;
+    height: 300px;
+    border-radius: 40px;
+    transform: rotate(-10deg);
+    transition: transform 0.3s ease, background-color 0.5s ease-in-out;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    
+    /* Flexbox para alinear el contenido interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem;
+    
+    /* El fondo inicial, luego JS lo cambia */
+    background-color: var(--color-green); 
+}
+
+.box-361:hover { 
+    transform: rotate(0deg) scale(1.05); 
+}
+
+/* El contenedor del texto, que usaremos para hacer el fade de opacidad */
+.valores-content {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Estilos de las partes internas de la caja */
+.valores-arrow {
+    font-size: 2rem;
+    margin-bottom: auto; /* Empuja el título hacia el medio */
+    line-height: 1;
+}
+
+.valores-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.valores-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+
+
+
+/* --- METODOLOGÍA (EFECTO STICKY SCROLL) --- */
+.methodology {
+    padding: 8rem 0;
+    background-color: var(--color-black);
+    
+    /* ACÁ ESTÁ EL TRUCO: 
+       Sumamos un extra de scroll al final para que las cartas 
+       tengan tiempo y espacio de apilarse por completo. */
+    padding-bottom: 30vh; 
+}
+
+.method-list {
+    list-style: none;
+    counter-reset: step-counter;
+    position: relative;
+    padding: 0;
+    
+    /* Ocupamos el 90% del ancho de la ventana y centramos */
+    width: 95vw;
+    margin: 0 auto;
+}
+
+.method-step {
+    /* Hacemos que se ancle antes, al 5% de la parte superior */
+    position: sticky;
+    top: 5vh; 
+    
+    /* Las filas son mucho más altas (90% del alto de la ventana) */
+    height: 30vh; 
+    
+    background-color: var(--color-black);
+    
+    /* El contenido se dispersa a lo largo del 90vw */
+    display: grid;
+    grid-template-columns: 150px 1fr 1.5fr; 
+    gap: 4rem;
+    align-items: center; /* Centra el contenido verticalmente en esos 90vh */
+    
+    /* La línea ocupa automáticamente el 100% de este bloque (que es el 90vw) */
+    border-top: 1px solid var(--color-purple);
+    
+}
+
+/* Colores alternados de las líneas y los números */
+.method-step:nth-child(odd) {
+    border-top-color: var(--color-purple);
+}
+.method-step:nth-child(even) {
+    border-top-color: var(--color-green);
+}
+
+.method-step:nth-child(odd) .step-number {
+    color: var(--color-purple);
+}
+.method-step:nth-child(even) .step-number {
+    color: var(--color-green);
+}
+
+/* Tipografía de los números gigante */
+.step-number {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 8vw, 7rem); /* Se adapta al tamaño de la pantalla */
+    font-weight: 900;
+    line-height: 1;
+}
+
+.step-number::before {
+    counter-increment: step-counter;
+    content: "0" counter(step-counter);
+}
+
+.step-name {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3vw, 3rem);
+    color: var(--color-white);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.step-desc {
+    font-size: 1.25rem;
+    color: #e0e0e0;
+    max-width: 600px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: var(--color-purple);
+    text-align: center;
+    /* Redujimos el padding superior e inferior */
+    padding: 3rem 0 1.5rem; 
+}
+
+footer h2 { 
+    /* Achicamos apenitas la fuente y el margen para que encaje mejor */
+    font-size: 2.5rem; 
+    margin-bottom: 1.5rem; 
+}
+
+.footer-copy { 
+    /* Redujimos el margen superior a la mitad */
+    margin-top: 2rem; 
+    font-size: 0.9rem; 
+    opacity: 0.8; 
+}
+
+
+/* --- CURSOR PERSONALIZADO Y ANIMACIÓN GSAP --- */
+#cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-green);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+}
+
+/* Ocultamos el cursor del sistema para que solo se vea el verde */
+body {
+    cursor: none; 
+}
+
+/* Las imágenes que deja la estela */
+.trail-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* Hacemos los elementos mucho más pequeños */
+    width: clamp(60px, 8vw, 120px); 
+    height: auto; /* Mantiene la proporción original exacta del PNG */
+    
+    object-fit: contain; /* Garantiza que el gráfico jamás se recorte */
+    pointer-events: none; /* Crucial para que no bloqueen los botones de abajo */
+    
+    /* Eliminamos box-shadow, aspect-ratio y border-radius que limitaban la forma */
+}
+
+/* --- PROYECTOS (Grilla 2x2 y Hover Effect) --- */
+.projects {
+    padding-bottom: 8rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea exactamente 2 columnas */
+    gap: 3rem;
+}
+
+.project-card {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 4/3; /* Mantiene proporción rectangular horizontal uniforme */
+    cursor: pointer;
+    background-color: var(--color-black);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Configuramos ambas imágenes superpuestas */
+.project-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* La segunda imagen arranca invisible */
+.project-card .img-hover {
+    opacity: 0;
+}
+
+/* Animaciones al pasar el mouse */
+.project-card:hover .img-base {
+    opacity: 0;
+    transform: scale(1.05); /* Pequeño zoom out */
+}
+
+.project-card:hover .img-hover {
+    opacity: 1;
+    transform: scale(1.05); /* Pequeño zoom in al revelar */
+}
+
+/* Información del proyecto (título y categoría) */
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 2rem 2rem;
+    
+    /* Degradado para oscurecer la base y asegurar que el texto se lea bien */
+    background: linear-gradient(to top, rgba(42, 38, 39, 0.95), transparent);
+    color: var(--color-white);
+    
+    /* El texto arranca un poco más abajo y transparente */
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 10;
+}
+
+.project-card:hover .project-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.project-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+    color: var(--color-green);
+    font-family: var(--font-heading);
+}
+
+.project-info p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* --- HERO DE PROYECTOS (100VH) --- */
+.projects-hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--color-black);
+    position: relative;
+    /* Evita que el navbar pise el texto visualmente */
+    padding-top: 80px; 
+}
+
+#hero-text-content {
+    /* Optimiza el rendimiento de las animaciones en el navegador */
+    will-change: transform, opacity;
+    transform-origin: center center;
+}
+
+.section-title-proyectos {
+    font-family: var(--font-headers);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Pasa a 1 sola columna en celular */
+        gap: 2rem;
+    }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* En un proyecto real acá iría el menú hamburguesa */
+    .split-layout { flex-direction: column; }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+@media (max-width: 900px) {
+    .method-step {
+        grid-template-columns: 1fr; /* Apila todo en una columna */
+        gap: 2rem;
+        height: auto; /* Anula los 90vh en celular para que no quede raro */
+        min-height: 80vh;
+        padding-top: 3rem;
+        align-items: start;
+        align-content: center;
+    }
+    
+    .step-number {
+        margin-bottom: 0;
+    }
+}

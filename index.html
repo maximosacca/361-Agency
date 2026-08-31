@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>361 Agencia | Una mirada más</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <!-- Cursor personalizado -->
+    <div id="cursor"></div>
+
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="img/PRINC - COLOR.png" alt="361 Agencia"></a>
+        </div>
+        <ul class="nav-links">
+            <!-- Actualizamos el link al nuevo ID -->
+            <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+        </ul>
+        <a href="https://whatsapp.com" class="btn-primary">Hablemos</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero section-reveal">
+        <div class="hero-content">
+            <h1>360° ya lo pensaron todos.<br><span class="highlight-green">Nosotros sumamos uno.</span></h1>
+            <p>Somos una agencia creativa integral especializada en branding, estrategia de comunicación y desarrollo de
+                marcas.</p>
+            <a href="#sobre-nosotros" class="btn-secondary">Descubrí nuestra mirada</a>
+        </div>
+        <!-- Elementos decorativos (Blobs) -->
+        <div class="blob blob-purple"></div>
+        <div class="blob blob-green"></div>
+    </header>
+
+    <!-- SOBRE NOSOTROS (Unificado: Filosofía + Misión/Visión) -->
+    <section id="sobre-nosotros" class="about-us section-reveal">
+        <div class="container">
+
+            <!-- 1. Bloque Introductorio Centrado -->
+            <div style="text-align: center; margin-bottom: 5rem;">
+                <h2 class="section-title">¿Quiénes <span class="highlight-purple">somos</span>?</h2>
+                <p class="large-text" style="max-width: 800px; margin: 0 auto 1.5rem;">
+                    Somos una agencia especializada en branding, estrategia de comunicación y desarrollo de marcas para
+                    emprendimientos y PyMES.
+                </p>
+                <p style="max-width: 800px; margin: 0 auto; color: #e0e0e0; font-size: 1.1rem;">
+                    Acompañamos a nuestros clientes desde la construcción de su identidad hasta la creación de campañas
+                    publicitarias integrales, combinando creatividad, análisis y planificación estratégica.
+                </p>
+            </div>
+
+            <!-- 2. Bloque Dividido (Misión y Visión) -->
+            <div class="split-layout">
+                <div class="split-text">
+                    <!-- Sobrescribimos el centrado global para que este título quede a la izquierda -->
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;"><span
+                            class="highlight-purple">Nuestro</span> diferencial</h2>
+                    <p>En 361 no comenzamos por el contenido, comenzamos por entender la marca." Escuchamos,
+                        comprendemos la esencia y objetivos, y combinamos estrategia, creatividad e identidad para crear
+                        comunicación con propósito.</p>
+                </div>
+                <div class="split-visual">
+                    <div class="split-visual">
+                        <div class="box-361" id="valores-box">
+                            <!-- El contenido se inyectará dinámicamente con JS -->
+                            <div class="valores-content" id="valores-content">
+                                <!-- Acá irán la flecha, el título y el subtítulo -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+     <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <h2>¿Tenés un proyecto en mente? </h2>
+            <a href="https://whatsapp.com" class="btn-primary">Hablemos</a>
+            <p class="footer-copy">© 2026 Agencia 361. Desde Córdoba, Argentina.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
