@@ -39,13 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const cursor = document.getElementById('cursor');
     
     if (cursor) {
-        // El cursor verde sigue al puntero real con un pequeño retraso suave
         window.addEventListener('mousemove', (e) => {
           gsap.to(cursor, {
             x: e.clientX,
             y: e.clientY,
-            duration: 0.15, // Cuanto más alto el número, más tarda en alcanzar a la flecha
-            ease: "power2.out" // Efecto de frenado suave al llegar
+            duration: 0.15, 
+            ease: "power2.out" 
           });
         });
 
@@ -180,35 +179,28 @@ document.addEventListener("DOMContentLoaded", () => {
         const valores = [
             {
                 title: "PROPÓSITO",
-                sub: "Descubrir lo que hace única a cada marca",
+                sub: "Trazamos metas claras para que el mensaje de tu marca trascienda dando resultados reales.",
                 bg: "var(--color-green)",
                 text: "var(--color-white)",
                 arrow: "→"
             },
             {
                 title: "INNOVACIÓN",
-                sub: "Soluciones con visión",
+                sub: "Creamos propuestas con visiones estrategicas.",
                 bg: "var(--color-purple)",
                 text: "var(--color-black)", 
                 arrow: "←"
             },
             {
-                title: "MISIÓN",
-                sub: "Acompañar marcas en su identidad",
-                bg: "var(--color-green)",
-                text: "var(--color-white)",
-                arrow: "↓"
-            },
-            {
                 title: "EMPATÍA",
-                sub: "Escuchamos antes de crear",
+                sub: "Nos ponemos en el lugar de tu audiencia para construir conexiones auténticas y humanas.",
                 bg: "var(--color-purple)",
                 text: "var(--color-black)",
                 arrow: "→"
             },
             {
                 title: "CREATIVIDAD",
-                sub: "Ideas que transforman",
+                sub: "Transformamos ideas audaces en soluciones digitales únicas que capturan la atención.",
                 bg: "var(--color-green)",
                 text: "var(--color-white)",
                 arrow: "←"
@@ -238,36 +230,56 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 500); 
         }, 3000); 
     }
-});
 
-/* ==========================================================================
+    /* ==========================================================================
        5. EFECTO SCROLL: HERO DE PROYECTOS (Achicar y desaparecer)
        ========================================================================== */
     const projectsHero = document.querySelector('.projects-hero');
     const heroText = document.getElementById('hero-text-content');
 
-    // Solo ejecutamos este código si estamos en la página de proyectos
     if (projectsHero && heroText) {
         window.addEventListener('scroll', () => {
-            // Usamos requestAnimationFrame para que la animación fluya a 60fps sin tirones
             requestAnimationFrame(() => {
                 const scrollY = window.scrollY;
                 const heroHeight = projectsHero.offsetHeight;
                 
-                // Calculamos el progreso (de 0 a 1) sobre el 70% del alto de la pantalla
                 let progress = scrollY / (heroHeight * 0.7);
                 if (progress > 1) progress = 1;
                 if (progress < 0) progress = 0;
                 
-                // La opacidad va de 1 a 0
                 const opacity = 1 - progress;
-                // La escala va de 1 a 0.7 (se achica un 30%)
                 const scale = 1 - (progress * 0.3);
                 
-                // Aplicamos los valores al contenedor
-                // El translateY(scrollY * 0.4) hace un efecto parallax suave hacia abajo
                 heroText.style.opacity = opacity;
                 heroText.style.transform = `scale(${scale}) translateY(${scrollY * 0.4}px)`;
             });
         });
     }
+
+    /* ==========================================================================
+       6. CARRUSEL INFINITO DEL TEAM (Inyección mediante Array)
+       ========================================================================== */
+    const teamTrack = document.getElementById('team-track');
+
+    if (teamTrack) {
+        const teamImages = [
+            './img/TEAM/Bresso.png',
+            './img/TEAM/Carossotto.png',
+            './img/TEAM/Coll.png',
+            './img/TEAM/Erba.png',
+            './img/TEAM/Gastaldi.png',
+            './img/TEAM/Mornacco.png'
+        ];
+
+        // Usamos .map para construir todo el HTML de las 6 tarjetas de una sola vez
+        const slidesHTML = teamImages.map(src => `
+            <div class="carousel-item">
+                <img src="${src}" alt="Team 361">
+            </div>
+        `).join('');
+
+        // Inyectamos el grupo original y el grupo clonado al mismo tiempo
+        teamTrack.innerHTML = slidesHTML + slidesHTML;
+    }
+
+}); // <--- ¡AQUÍ ESTÁ LA LLAVE DE CIERRE! Todo queda protegido adentro.
